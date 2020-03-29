@@ -23,7 +23,7 @@ import lombok.Setter;
 public class BalanceSheet  implements Serializable  {
 		
 	@Id	@GeneratedValue
-	@Getter @Setter  private Long id_balanceSheet;
+	@Getter @Setter  private Long id;
 	@Getter @Setter  private Date date;
 	@Getter @Setter  private String title;
 	@Getter @Setter  private String location;

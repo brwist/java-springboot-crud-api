@@ -18,17 +18,24 @@ import com.subledger.entities.balanceSheet.BalanceSheet;
 public class BalanceSheetRestController {
 	
 	@Autowired
-	private BalanceSheetRepository BalanceSheetRepository;
+	private BalanceSheetRepository balanceSheetRepository;
+	
 	@GetMapping("/balancesheets/{id}")
 	public BalanceSheet getBalancebyID(@PathVariable Long id){	
-		return BalanceSheetRepository.findOne(id);
+		return balanceSheetRepository.findOne(id);
 	}
 	
 	
 	@PutMapping("/balancesheets/{id}")
-	public BalanceSheet updateBS(@PathVariable Long id,@RequestBody BalanceSheet bs) {
+	public BalanceSheet updateBS(@PathVariable Long id,@RequestBody BalanceSheet bs) {	
+		BalanceSheet bsToUp = balanceSheetRepository.findOne(id);
+		bsToUp.setSetting(bs.getSetting());
+		//bsToUp.setSettings(bs.getSettings());
+		bsToUp.setLocation(bs.getLocation());
+		bsToUp.setTitle(bs.getTitle());
+		bsToUp.setNameLabel(bs.getNameLabel());
+		bsToUp.setDate(bs.getDate());
 		
-				
-		return BalanceSheetRepository.save(bs);
+		return balanceSheetRepository.save(bsToUp);
 	}
 }
