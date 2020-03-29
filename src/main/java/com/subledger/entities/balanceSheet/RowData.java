@@ -24,20 +24,70 @@ import lombok.Setter;
 
 @Entity
 
-@AllArgsConstructor @NoArgsConstructor
 public class RowData  implements Serializable {
-	@Id	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Getter @Setter  private Long id;
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public Collection<Coldata> getCols() {
+		return cols;
+	}
+
+
+	public void setCols(Collection<Coldata> cols) {
+		this.cols = cols;
+	}
+
+
 	
-	@Getter @Setter private String name;
+	public void setBalancesheet(BalanceSheet balancesheet) {
+		this.balancesheet = balancesheet;
+	}
+
+
+	public RowData() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public RowData(Long id, String name, Collection<Coldata> cols, BalanceSheet balancesheet) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.cols = cols;
+		this.balancesheet = balancesheet;
+	}
+
+
+	@Id	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	
+	private String name;
 	
 	
 	@OneToMany (mappedBy = "rowdata",fetch =FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-	@Getter @Setter private Collection<Coldata> cols=new ArrayList<>();
+	private Collection<Coldata> cols=new ArrayList<>();
 
 		
 	@ManyToOne()
 	@JoinColumn(name="rd_bs")
-	@Setter private BalanceSheet balancesheet;
+	private BalanceSheet balancesheet;
 	
 }

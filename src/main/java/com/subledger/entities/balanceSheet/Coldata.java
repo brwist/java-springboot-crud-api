@@ -21,21 +21,73 @@ import lombok.Setter;
 
 
 @Entity
-@AllArgsConstructor @NoArgsConstructor
 public class Coldata  implements Serializable {
 	
+	public Coldata() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Coldata(Long id, String balance, Confidence confidence, RowData rowdata) {
+		super();
+		this.id = id;
+		this.balance = balance;
+		this.confidence = confidence;
+		this.rowdata = rowdata;
+	}
+
+
 	@Id	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Getter @Setter  private Long id;
+	private Long id;
 	
-	@Getter @Setter private String balance;
+	private String balance;
 	
 	
 	@OneToOne(fetch =FetchType.EAGER, mappedBy = "coldata",cascade = CascadeType.ALL, orphanRemoval = true)
-	@Getter @Setter private Confidence confidence;
+	 private Confidence confidence;
 	
 	
 	@ManyToOne()
 	@JoinColumn(name="col_row")
-	@Setter private RowData rowdata;
+	private RowData rowdata;
+//should not have getter
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getBalance() {
+		return balance;
+	}
+
+
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
+
+
+	public Confidence getConfidence() {
+		return confidence;
+	}
+
+
+	public void setConfidence(Confidence confidence) {
+		this.confidence = confidence;
+	}
+
+
+
+
+	public void setRowdata(RowData rowdata) {
+		this.rowdata = rowdata;
+	}
 	
 }
