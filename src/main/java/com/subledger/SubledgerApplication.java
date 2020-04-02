@@ -74,21 +74,21 @@ public class SubledgerApplication implements CommandLineRunner{
 	//**********************
 	// Init Balance Sheet Blank
 	/// *******
-	BalanceSheet bs=new BalanceSheet(null,new Date(),"db Balance Sheet Audit","db XYZ Bank",
+	BalanceSheet bs1=new BalanceSheet(null,new Date(),"db Balance Sheet Audit","db XYZ Bank",
 			"db Assets Subledger","Default","settings",
 			null, null);
-	BalanceSheetRepository.save(bs);
+	BalanceSheetRepository.save(bs1);
 	
 		
 	
 //	create row data collection first Blank
-	RowData rd1=new RowData(null,"Residential Mortgages, Net", null,bs);
+	RowData rd1=new RowData(null,"Residential Mortgages, Net", null,bs1);
 	rowDataRepository.save(rd1);
 //	daa Cols in row data
-	Coldata col1 = new Coldata(null, "3483", null,rd1);
-	Coldata col2 = new Coldata(null,"-6228",null,rd1);
-	Coldata col3 = new Coldata(null,"-12208",null,rd1);
-	Coldata col4 = new Coldata(null,"-1098",null,rd1);
+	Coldata col1 = new Coldata(null, "111", null,rd1);
+	Coldata col2 = new Coldata(null,"111",null,rd1);
+	Coldata col3 = new Coldata(null,"111",null,rd1);
+	Coldata col4 = new Coldata(null,"111",null,rd1);
 	colDataRepository.save(col1);
 	colDataRepository.save(col2);
 	colDataRepository.save(col3);
@@ -101,20 +101,20 @@ public class SubledgerApplication implements CommandLineRunner{
 	confidenceRepository.save(cf2);
 	confidenceRepository.save(cf3);
 	confidenceRepository.save(cf4);
-	colstrRepository.save(new Colstr(null,"mortgages",bs));
-	colstrRepository.save(new Colstr(null,"Consumer Loans",bs));
-	colstrRepository.save(new Colstr(null,"Securities",bs));
-	colstrRepository.save(new Colstr(null,"Debt & Derivatives",bs));
+	colstrRepository.save(new Colstr(null,"mortgages",bs1));
+	colstrRepository.save(new Colstr(null,"Consumer Loans",bs1));
+	colstrRepository.save(new Colstr(null,"Securities",bs1));
+	colstrRepository.save(new Colstr(null,"Debt & Derivatives",bs1));
 	
 	
 //	create row data collection first Blank
-	RowData rd2=new RowData(null,"Federal Funds Sold", null,bs);
+	RowData rd2=new RowData(null,"Federal Funds Sold", null,bs1);
 	rowDataRepository.save(rd2);
 //	daa Cols in row data
-	Coldata col12 = new Coldata(null, "544", null,rd2);
-	Coldata col22 = new Coldata(null,"-658",null,rd2);
-	Coldata col32 = new Coldata(null,"-1208",null,rd2);
-	Coldata col42 = new Coldata(null,"-1208",null,rd2);
+	Coldata col12 = new Coldata(null, "111", null,rd2);
+	Coldata col22 = new Coldata(null,"111",null,rd2);
+	Coldata col32 = new Coldata(null,"-111",null,rd2);
+	Coldata col42 = new Coldata(null,"-111",null,rd2);
 	colDataRepository.save(col12);
 	colDataRepository.save(col22);
 	colDataRepository.save(col32);
@@ -132,13 +132,13 @@ public class SubledgerApplication implements CommandLineRunner{
 
 	
 //	create row data collection first Blank
-	RowData rd3=new RowData(null,"Credit Card Receivables", null,bs);
+	RowData rd3=new RowData(null,"Credit Card Receivables", null,bs1);
 	rowDataRepository.save(rd3);
 //	daa Cols in row data
-	Coldata col13 = new Coldata(null, "3043", null,rd3);
-	Coldata col23 = new Coldata(null,"-6348",null,rd3);
-	Coldata col33 = new Coldata(null,"-1008",null,rd3);
-	Coldata col43 = new Coldata(null,"-1008",null,rd3);
+	Coldata col13 = new Coldata(null, "111", null,rd3);
+	Coldata col23 = new Coldata(null,"-111",null,rd3);
+	Coldata col33 = new Coldata(null,"-111",null,rd3);
+	Coldata col43 = new Coldata(null,"-111",null,rd3);
 	colDataRepository.save(col13);
 	colDataRepository.save(col23);
 	colDataRepository.save(col33);
@@ -151,6 +151,86 @@ public class SubledgerApplication implements CommandLineRunner{
 	confidenceRepository.save(cf23);
 	confidenceRepository.save(cf33);
 	confidenceRepository.save(cf43);
+	
+	
+	
+	// Second balance Sheet
+		/// *******
+//		BalanceSheet bs2=new BalanceSheet(null,new Date(),"Second balance sheet","db testk",
+//				"db test sonic","test","test",
+//				null, null);
+//		BalanceSheetRepository.save(bs2);
+							
+////		create row data collection first Blank
+//		RowData rd12=new RowData(null,"Second Mortgages, Net", null,bs2);
+//		rowDataRepository.save(rd12);
+////		daa Cols in row data
+//		Coldata col122 = new Coldata(null, "222", null,rd12);
+//		Coldata col222 = new Coldata(null,"-222",null,rd12);
+//		Coldata col322 = new Coldata(null,"-222",null,rd12);
+//		Coldata col422 = new Coldata(null,"-222",null,rd12);
+//		colDataRepository.save(col122);
+//		colDataRepository.save(col222);
+//		colDataRepository.save(col322);
+//		colDataRepository.save(col422);
+//		Confidence cf122 = new Confidence(null,1300l,1.324f,230l,col122);
+//		Confidence cf222 = new Confidence(null,100l,1.324f,230l,col222);
+//		Confidence cf322 = new Confidence(null,1300l,1.324f,230l,col322);
+//		Confidence cf422 = new Confidence(null,1300l,1.324f,230l,col422);
+//		confidenceRepository.save(cf122);
+//		confidenceRepository.save(cf222);
+//		confidenceRepository.save(cf322);
+//		confidenceRepository.save(cf422);
+//		colstrRepository.save(new Colstr(null,"Second gages",bs2));
+//		colstrRepository.save(new Colstr(null,"Second Loans",bs2));
+//		colstrRepository.save(new Colstr(null,"Second",bs2));
+//		colstrRepository.save(new Colstr(null,"Second & Derivatives",bs2));
+		
+		
+//		create row data collection first Blank
+//		RowData rd22=new RowData(null,"Federal Funds Sold", null,bs2);
+//		rowDataRepository.save(rd22);
+////		daa Cols in row data
+//		Coldata col1222 = new Coldata(null, "222", null,rd22);
+//		Coldata col2222 = new Coldata(null,"-222",null,rd22);
+//		Coldata col3222 = new Coldata(null,"-222",null,rd22);
+//		Coldata col4222 = new Coldata(null,"-222",null,rd22);
+//		colDataRepository.save(col1222);
+//		colDataRepository.save(col2222);
+//		colDataRepository.save(col3222);
+//		colDataRepository.save(col4222);
+//		
+//		Confidence cf1222 = new Confidence(null,140l,1.324f,230l,col1222);
+//		Confidence cf2222 = new Confidence(null,150l,1.324f,230l,col2222);
+//		Confidence cf3222 = new Confidence(null,130l,1.324f,230l,col3222);
+//		Confidence cf4222 = new Confidence(null,130l,1.324f,230l,col4222);
+//		confidenceRepository.save(cf1222);
+//		confidenceRepository.save(cf2222);
+//		confidenceRepository.save(cf3222);
+//		confidenceRepository.save(cf4222);
+		
+
+		
+//		create row data collection first Blank
+//		RowData rd32=new RowData(null,"Second Card Receivables", null,bs2);
+//		rowDataRepository.save(rd32);
+////		daa Cols in row data
+//		Coldata col1322 = new Coldata(null, "222", null,rd32);
+//		Coldata col2322 = new Coldata(null,"-6348",null,rd32);
+//		Coldata col3322 = new Coldata(null,"-1008",null,rd32);
+//		Coldata col4322 = new Coldata(null,"-1008",null,rd32);
+//		colDataRepository.save(col1322);
+//		colDataRepository.save(col2322);
+//		colDataRepository.save(col3322);
+//		colDataRepository.save(col4322);
+//		Confidence cf1322 = new Confidence(null,1300l,1.324f,230l,col1322);
+//		Confidence cf2322 = new Confidence(null,100l,1.324f,230l,col2322);
+//		Confidence cf3322 = new Confidence(null,1300l,1.324f,230l,col3322);
+//		Confidence cf4322 = new Confidence(null,1300l,1.324f,230l,col4322);
+//		confidenceRepository.save(cf1322);
+//		confidenceRepository.save(cf2322);
+//		confidenceRepository.save(cf3322);
+//		confidenceRepository.save(cf4322);
 
 
 }

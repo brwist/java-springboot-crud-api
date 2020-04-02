@@ -98,7 +98,7 @@ public class BalanceSheet  implements Serializable  {
 
 	@OneToMany (mappedBy = "balancesheet",cascade = CascadeType.ALL, orphanRemoval = true)
 	@Getter @Setter private Collection<Colstr> cols=new ArrayList<>();
-
+	
 	public BalanceSheet(Long id, Date date, String title, String location, String nameLabel, String setting,
 			String settings, Collection<RowData> rowData, Collection<Colstr> cols) {
 		super();
