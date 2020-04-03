@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.subledger.dao.balanceSheet.BalanceSheetRepository;
 import com.subledger.entities.balanceSheet.BalanceSheet;
+import com.subledger.entities.balanceSheet.Coldata;
 
 
 @CrossOrigin(origins = "*")
@@ -41,6 +42,9 @@ public class BalanceSheetRestController {
 	@PutMapping("/balancesheets/{id}")
 	public BalanceSheet updateBS(@PathVariable Long id,@RequestBody BalanceSheet bs) {	
 		BalanceSheet bsToUp = balanceSheetRepository.findOne(id);
+		if(bsToUp == null) {
+			return null;
+		}else {
 		bsToUp.setSetting(bs.getSetting());
 		//bsToUp.setSettings(bs.getSettings());
 		bsToUp.setLocation(bs.getLocation());
@@ -48,7 +52,7 @@ public class BalanceSheetRestController {
 		bsToUp.setNameLabel(bs.getNameLabel());
 		bsToUp.setDate(bs.getDate());
 		
-		return balanceSheetRepository.save(bsToUp);
+		return balanceSheetRepository.save(bsToUp);}
 	}
 	
 	@Transactional

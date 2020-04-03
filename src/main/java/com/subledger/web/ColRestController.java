@@ -39,8 +39,12 @@ public class ColRestController {
 	@PutMapping("/colstrs/{id}")
 	public Colstr updateColStr(@PathVariable Long id,@RequestBody String str) {
 		Colstr clUpdate= colstrRepository.findOne(id);
+		if(clUpdate == null) {
+			return null;
+		}else {
 		clUpdate.setName(str);
 		return colstrRepository.save(clUpdate);
+		}
 	}
 	
 	@Transactional

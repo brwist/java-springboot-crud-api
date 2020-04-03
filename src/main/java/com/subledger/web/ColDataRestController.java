@@ -38,8 +38,11 @@ public class ColDataRestController {
 	@PutMapping("/coldatas/{id}")
 	public Coldata updateColData(@PathVariable Long id,@RequestBody Coldata cd) {
 		Coldata cdUpdate= coldataRepository.findOne(id);
+		if(cdUpdate == null) {
+			return null;
+		}else {
 		cdUpdate.setBalance(cd.getBalance());
-		return coldataRepository.save(cdUpdate);
+		return coldataRepository.save(cdUpdate);}
 	}
 
 	@Transactional

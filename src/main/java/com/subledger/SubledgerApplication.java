@@ -60,16 +60,16 @@ public class SubledgerApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-	// Init inventories
-//	for (int i = 0; i <10; i++) {		
-//	Inventory inv = new Inventory(null, new Date(), "Extra Inventory Cash",(double) 580450,(double) 6750, (double)54, new Date(),
-//					(double) 46, "UYE77","545", "FF4", new Date(),new Date(), (double)9077, (double) 480,  new Date(),  (double)3480 ,
-//					 (double) 480,  (double) 480, "TT554",
-//					 (double) 340 , "RE",  (double) 480 , "FD", "DF", "DFL", "LDFLD", "SH", "6OI",  (double) 34880 ,
-//					 (double) 480, (double)459,  (double) 480 , (double) 380 ,  (double)280,  new Date(), "OO7", "ER","09II",
-//					 "RU",  new Date());
-//			inventoryRepository.save(inv);
-//		}
+//	 Init inventories
+	for (int i = 0; i <10; i++) {		
+	Inventory inv = new Inventory(null, new Date(), "Extra Inventory Cash",(double) 580450,(double) 6750, (double)54, new Date(),
+					(double) 46, "UYE77","545", "FF4", new Date(),new Date(), (double)9077, (double) 480,  new Date(),  (double)3480 ,
+					 (double) 480,  (double) 480, "TT554",
+					 (double) 340 , "RE",  (double) 480 , "FD", "DF", "DFL", "LDFLD", "SH", "6OI",  (double) 34880 ,
+					 (double) 480, (double)459,  (double) 480 , (double) 380 ,  (double)280,  new Date(), "OO7", "ER","09II",
+					 "RU",  new Date());
+			inventoryRepository.save(inv);
+		}
 	
 	//**********************
 	// Init Balance Sheet Blank
